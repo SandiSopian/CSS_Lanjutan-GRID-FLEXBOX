@@ -2,9 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Latihan 3 GRID | Special Keyword & Function Grid | min/max-content</title>
+    <title>CSS Grid | Grid Gap</title>
     <style>
       html,
       body {
@@ -14,13 +13,23 @@
       }
 
       .container {
-        width: 100%;
+        width: 60%;
         margin: 50px auto;
         display: grid;
-        /* grid-template-columns: 1fr max-content 1fr; */
-        /* akan menjumlahkan kata dan menjadikan semua kata menjadi patokan */
-        grid-template-columns: 1fr min-content 1fr;
-        /* akan memecah kata dan yang paling panjang akan di jadikan patokan */
+        grid-template-columns: repeat(3, 1fr);
+        /*
+        grid-column-gap: 10px;
+        grid-row-gap: 25px;
+        */
+        /* 
+        column-gap: 10px;
+        row-gap: 25px;
+        */
+
+        /* grid-gap: 25px 10px; */
+        /* gap: 25px 10px; */
+
+        gap: 25px;
       }
 
       .item {
@@ -28,6 +37,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        box-sizing: border-box;
       }
 
       .item:nth-child(even) {
@@ -35,13 +45,14 @@
       }
     </style>
   </head>
+
   <body>
     <div class="container">
       <div class="item">1</div>
       <div class="item">2</div>
       <div class="item">3</div>
       <div class="item">4</div>
-      <div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, quaerat!</div>
+      <div class="item">5</div>
       <div class="item">6</div>
       <div class="item">7</div>
       <div class="item">8</div>

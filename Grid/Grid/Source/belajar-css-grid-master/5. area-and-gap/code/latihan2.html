@@ -2,9 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Latihan 3 GRID | Special Keyword & Function Grid | min/max-content</title>
+    <title>CSS Grid | Grid Template</title>
     <style>
       html,
       body {
@@ -14,13 +13,18 @@
       }
 
       .container {
-        width: 100%;
+        width: 60%;
         margin: 50px auto;
         display: grid;
-        /* grid-template-columns: 1fr max-content 1fr; */
-        /* akan menjumlahkan kata dan menjadikan semua kata menjadi patokan */
-        grid-template-columns: 1fr min-content 1fr;
-        /* akan memecah kata dan yang paling panjang akan di jadikan patokan */
+        /* grid-template:
+          [baris1-mulai] 'header header header' 50px [baris1-akhir]
+          [baris2-mulai] 'footer footer footer' 50px [baris2-akhir]
+          / 1fr 2fr 3fr; */
+        grid-template-rows: [baris1-mulai] 50px [baris1-akhir baris1-akhir] 50px [baris2-akhir];
+        grid-template-columns: 1fr 2fr 3fr;
+        grid-template-areas:
+          'header header header'
+          'footer footer footer';
       }
 
       .item {
@@ -28,6 +32,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        box-sizing: border-box;
       }
 
       .item:nth-child(even) {
@@ -35,17 +40,18 @@
       }
     </style>
   </head>
+
   <body>
     <div class="container">
       <div class="item">1</div>
       <div class="item">2</div>
       <div class="item">3</div>
       <div class="item">4</div>
-      <div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, quaerat!</div>
+      <div class="item">5</div>
       <div class="item">6</div>
-      <div class="item">7</div>
+      <!-- <div class="item">7</div>
       <div class="item">8</div>
-      <div class="item">9</div>
+      <div class="item">9</div> -->
     </div>
   </body>
 </html>
